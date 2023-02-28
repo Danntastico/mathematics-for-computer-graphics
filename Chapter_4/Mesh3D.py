@@ -14,7 +14,7 @@ class Mesh3D:
 
     def draw(self):
         for t in range(0, len(self.triangles), 3):
-            glBegin(GL_LINE_LOOP)
+            glBegin(GL_POLYGON)
             glVertex3fv(
                 self.vertices[self.triangles[t]])
             glVertex3fv(self.vertices[self.triangles[t +

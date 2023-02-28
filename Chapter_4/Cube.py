@@ -1,4 +1,6 @@
-from Mesh3D import *
+from Chapter_4.Mesh3D import *
+
+
 class Cube(Mesh3D):
     def __init__(self):
         self.vertices = [
