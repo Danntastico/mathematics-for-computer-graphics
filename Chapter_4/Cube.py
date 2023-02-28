@@ -1,6 +1,4 @@
 from Mesh3D import *
-
-
 class Cube(Mesh3D):
     def __init__(self):
         self.vertices = [
@@ -17,8 +15,8 @@ class Cube(Mesh3D):
             0, 2, 3,
             0, 3, 1,
 
-            0, 6, 4,
-            0, 2, 6,
+            0, 2, 4,
+            4, 6, 0,
 
             0, 6, 7,
             0, 7, 1,
