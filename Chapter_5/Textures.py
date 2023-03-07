@@ -39,7 +39,7 @@ while not done:
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     cube.draw()
     if rotate_cube:
-        glRotatef(0.01, 3, 0.5, 0)
+        glRotatef(0.1, 0.1, 0.1, 0)
     pygame.display.flip()
 
 pygame.quit()

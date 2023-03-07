@@ -17,14 +17,17 @@ class Mesh3D:
         self.texID = 0
 
     def draw(self):
+        glEnable(GL_TEXTURE_2D)
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL)
+        glBindTexture(GL_TEXTURE_2D, self.texID)
         for t in range(0, len(self.triangles), 3):
-            glBegin(GL_POLYGON)
-            glVertex3fv(
-                self.vertices[self.triangles[t]])
-            glVertex3fv(self.vertices[self.triangles[t +
-                                                     1]])
-            glVertex3fv(self.vertices[self.triangles[t +
-                                                     2]])
+            glBegin(self.draw_type)
+            glTexCoord2fv(self.uvs[self.triangles[t]])
+            glVertex3fv(self.vertices[self.triangles[t]])
+            glTexCoord2fv(self.uvs[self.triangles[t + 1]])
+            glVertex3fv(self.vertices[self.triangles[t + 1]])
+            glTexCoord2fv(self.uvs[self.triangles[t + 2]])
+            glVertex3fv(self.vertices[self.triangles[t + 2]])
             glEnd()
 
     def init_texture(self):
